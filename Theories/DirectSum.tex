@@ -1,0 +1,109 @@
+\chapter{Tổng trực tiếp}
+Giống như việc tổng hợp các hợp chất mới từ các nguyên tố đã biết bên hoá học, việc xây dựng một cấu trúc mới dựa trên các đối tượng đã có trong toán học là một việc cần thiết để mở rộng các công cụ giúp mô tả thực tế. Ở chương này chúng ta sẽ nghiên cứu cách xây dựng một vài không gian vector mới dựa trên các không gian vector đã biết.
+\section{Tổng trực tiếp ngoài}
+\begin{defn}[Tổng trực tiếp ngoài]
+    Cho $U,V$ là các $\F-$không gian vector. Khi đó \textit{tổng trực tiếp ngoài của $U$ và $V$} là một không gian vector với các phần tử có dạng $(u,v)$ với $u \in U,~v \in V$ cùng với hai phép toán
+    \begin{enumerate}
+        \item Phép cộng giữa hai vector
+        \[+: (U \oplus V) \times (U \oplus V) \to (U \oplus V),~(u_1,v_1)+(u_2,v_2) \defeq (u_1+u_2,v_1+v_2).\]
+        \item Phép nhân vector với một vô hướng 
+        \[\cdot: \F \times (U \oplus V) \to (U \oplus V),~\lambda\cdot(u,v) \defeq (\lambda u,\lambda v).\]
+    \end{enumerate}
+    Kí hiệu $U \oplus V$.
+\end{defn}
+\begin{defn}
+    Kí hiệu $\Vect(\F)$ là tập tất cả các không gian vector trên trường $\F$.
+\end{defn}
+\begin{prop}
+    Cho $\ff = \{V_i~|~i \in I, V_i \in \Vect(\F)\}$ là một học các $\F-$không gian vector. Khi đó tập tất cả các ánh xạ 
+    \[\left\{f: I \to \bigcup_{i\in I } V_i~\big|~f(i)\in V_i\right\}\]
+    cùng với các phép toán sau tạo thành một $\F-$không gian vector.
+    \begin{enumerate}
+        \item $(f+g)(i) = f(i) + g(i) \quad \forall i \in I.$
+        \item $(\lambda\cdot f)(i) = \lambda \cdot f(i) \quad \forall i \in I, \forall \lambda \in \F$.
+    \end{enumerate}
+\end{prop}
+% \begin{proof}
+%     Đặt $V = \left\{f: I \to \bigcup_{i\in I } V_i~\big|~f(i)\in V_i\right\}$. Khi đó 
+%     \begin{enumerate}
+%         \item $(V,+)$ là một nhóm abel vì 
+%         \begin{itemize}
+%             \item Phép cộng trên có tính chất kết hợp. Thật vậy với mọi $i \in I$ thì 
+%             \begin{align*}
+%                 [(f+g)+h](i) 
+%                 &= (f+g)(i) + h(i) \\
+%                 &= [f(i) + g(i)] + h(i)\\
+%                 &= f(i) + [g(i) + h(i)]\\
+%                 &= f(i) + (g+h)(i)\\
+%                 &= [f+(g+h)](i)
+%             \end{align*}
+%             Chứng tỏ $(f+g)+h=f+(h+g)$, lưu ý $[f(i) + g(i)] + h(i) = f(i) + [g(i) + h(i)]$ là do $f(i),g(i),h(i) \in (V_i,+)$ là một nhóm abel.
+%             \item Tồn tại phần tử trung hoà, ánh xạ $0: I \to \bigcup_{i\in I } V_i,~i \mapsto 0_i \in V_i$ sao cho 
+%             \[(f+0)(i) = f(i) + 0(i) = f(i) + 0_i = f(i) = 0_i + f(i) = 0(i) + f(i) = (0+f)(i).\] 
+%             Chứng tỏ $f+ 0 = f= 0 + f  \quad \forall f \in V$.
+%             \item Với mọi $f \in V$, tồn tại \[(-f): I \to \bigcup_{i\in I } V_i,~i \mapsto (-f)(i) = -f(i) \in V_i\]
+%             sao cho 
+%             \[[f+(-f)](i) = f(i) + (-f)(i) = f(i) - f(i) = 0_i  \]
+%             \[[(-f)+f](i) = (-f)(i) + f(i) = -f(i) + f(i) = 0_i  \]
+%             \item 
+%         \end{itemize}
+%     \end{enumerate}
+% \end{proof}
+\begin{comment*}
+    Ta thấy cấu trúc tổng trực tiếp trên có thể được sinh ra bởi bất kỳ một họ các không gian vector bằng cách xem các $(v_1,\ldots, v_n)$ như là một hàm \[f:\{1,\ldots,n\} \to \bigcup_{i\in I } V_i,~i \mapsto f(i) \in V_i.\]
+\end{comment*}
+\begin{defn}[Tích trực tiếp giữa các không gian vector]
+    Cho $\ff = \{V_i~|~i \in I\}$ là một họ các không gian vector trên trường $\F$. Khi đó \textit{tích trực tiếp của $\ff$} là không gian vector
+    \[\prod_{i \in I}{V_i}\defeq \{f: I \to \bigcup_{i\in I } {V_i}~|~f(i) \in V_i\}.\]
+    Không gian vector này là không gian con của không gian vector tất cả các hàm $f$ từ $I$ vào $\bigcup_{i\in I } V_i$.
+\end{defn}
+\begin{question*}
+    Ở trên ta đã định nghĩa tổng trực tiếp cho hai không gian vector, từ đó có thể xây dựng tổng trực tiếp của hữu hạn các không gian vector. Vậy câu hỏi đặt ra với $I$ là một tập chỉ số không phải hữu hạn thì liệu có tồn tại tổng trực tiếp giữa các không gian vector trong họ $\ff$ không?
+\end{question*}
+\begin{defn}
+    Cho $\ff = \{V_i~|~i \in I\}$ là một họ các $\F-$không gian vector, khi đó \textit{giá (support) của hàm $f: I \to \bigcup_{i\in I }{V_i}$} là tập 
+    \[\supp(f) = \{i \in I~|~f(i) \neq 0\}.\]
+    Một hàm $f$ được gọi là có \textit{giá hữu han} nếu $f(i) \neq 0$ tại một số hữu hạn các chỉ số $i \in I$. 
+\end{defn}
+\begin{defn}
+    Tổng trực tiếp ngoài của họ các $\F-$không gian vector $\ff = \{V_i~|~i \in I\}$ là không gian vector 
+    \[\bigoplus_{i\in I}{V_i} = \left\{f: I \to \bigcup_{i\in I } V_i~\bigg|~f(i) \in V_i,~|\supp(f)| < \infty\right\}\]
+    được coi như không gian con của không gian vector tất cả các hàm $f$ từ $I$ vào $\bigcup_{i\in I } V_i$.\\
+    Nói riêng khi $V_i = V~\forall i \in I$ thì $\bigcup_{i\in I } V_i = V$, ta ký hiệu 
+    \[V^I = \{f: I \to V\}\] và 
+    \[(V^I)_0 = \left\{f: I \to V^I~\big|~|\supp(f)| < \infty\right\}.\]
+    Vì vậy
+    \[\prod_{i \in I}{V} = V^I \text{ và } \bigoplus_{i\in I}{V} = (V^I)_0.\]
+\end{defn}
+\begin{comment*}
+    Với một họ các không gian vector trên trường $\F$ thì tích trực tiếp ngoài và tổng trực tiếp của chúng là như nhau.
+\end{comment*}
+\section{Tổng trực tiếp trong}
+\begin{defn}[Tổng trực tiếp trong]
+    Cho $V$ là một $\F-$không gian vector và $\ff = \{V_i~|~i\in I\}$ là một họ các không gian vector con của $V$. Khi đó $V$ được gọi là tổng trực tiếp của họ các không gian con $\ff$, kí hiệu 
+    \[V = \bigoplus \ff \quad \text{ hoặc }\quad V = \bigoplus_{i \in I} V_i\] nếu nó thoả mãn
+    \begin{enumerate}
+        \item $V = \displaystyle \sum_{i \in I} V_i$, nghĩa là $\forall v \in V,~\exists v_i \in S_i$ sao cho $v = \displaystyle \sum_{i \in I}{v_i}$.
+        \item Với mọi $i \in I$ thì
+        \[V_i \cap \left(\sum_{i \neq j \in I} V_j\right) = \{0\}.\]
+    \end{enumerate}
+    Nói riêng, khi $\ff$ là một họ hữu hạn các không gian con $V_i$ ta có thể viết 
+    \[V = V_1 \oplus \cdots \oplus V_n = \bigoplus_{i=1}^{n}{V_i}.\]
+    Đặc biệt, nếu $V = V_1 \oplus V_2$ thì $V_1 \cap V_2 = \{0\}$, tức với mỗi $v \in V$, tồn tại duy nhất $v_i \in V_i$ sao cho $v = v_1 + v_2$. Khi đó $V_2$ được gọi là \textit{phần bù tuyến tính} của $V_1$ trong $V$.
+\end{defn}
+\begin{remark*}
+    Với hai không gian vector con $U, W$ của $V$ thì luôn tồn tại $U + W$, tuy nhiên nếu $U \cap W \neq \{0\}$ thì không tồn tại $U \oplus W$.
+\end{remark*}
+\begin{thm}
+    Mọi không gian vector con của một không gian vector đều có phần bù tuyến tính, nghĩa là nếu $S$ là một không gian vector con của $V$ thì tồn tại không gian con $T$ của $V$ sao cho $V = S \oplus T$.
+\end{thm}
+\begin{proof}
+    Giả sử $S$ là một không gian vector con của $V$ với cơ sở là $(v_1,\ldots,v_r)$, khi đó bổ sung $v_{r+1},\ldots, v_n$ để thành một cơ sở của $V$ là $(v_1,\ldots,v_r,v_{r+1},\ldots, v_n)$. Khi đó ta sẽ chỉ ra $V = S \oplus T$ với $T = \Span\{v_{r+1},\ldots, v_n\}$. Thật vậy, do $(v_1,\ldots,v_r,v_{r+1},\ldots, v_n)$ là một cơ sở của $V$ nên với mọi $v \in V$, tồn tại các $\lambda_i \in \F$ sao cho 
+    \[v = \underbrace{(\lambda_1v_1+\ldots+ \lambda_rv_r)}_{s \in S} + \underbrace{(\lambda_{r+1}v_{r+1} + \ldots + \lambda_nv_n)}_{t \in T} \in S + T\]
+    và $S \cap T = \{0\}$ vì nếu tồn tại $w \in S \cap T$ thì $\exists \alpha_i,~\beta_j \in \F$ sao cho 
+    \begin{align*}
+        w = \alpha_1 v_1 + \ldots + \alpha_rv_r = \beta_{r+1}v_{r+1} + \ldots + \beta_nv_n
+    \end{align*}
+    Dẫn đến $\alpha_1 v_1 + \ldots + \alpha_rv_r - \beta_{r+1}v_{r+1} - \ldots - \beta_nv_n = 0$, điều này xảy ra khi $\alpha_i = 0 = \beta_j$ do $(v_1,\ldots,v_r,v_{r+1},\ldots, v_n)$ là một cơ sở của $V$ nên mọi ràng buộc của chúng đều là ràng buộc tầm thường.
+\end{proof}
+

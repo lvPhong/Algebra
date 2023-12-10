@@ -1,0 +1,26 @@
+\chapter{Tích tensor giữa các không gian vector}
+\begin{comment*}
+    Với hai không gian vector $U,V$ trên trường $\F$ ta đã xây dựng được hai cấu trúc không gian vector quan trọng đó là tổng trực tiếp $U \oplus V$ và không gian các đồng cấu $\hom(U,V)$.
+\end{comment*}
+\section{Tính phổ dụng}
+\begin{defn}
+    Ánh xạ $g: A \to X$ được gọi là \textit{phân tích được qua ánh xạ $f: A \to S$} nếu tồn tại ánh xạ $\tau: S \to X$ sao cho $g = \tau \circ f$, tức là biểu đồ sau là giao hoán.
+    \input{images/ComDiagram}
+\end{defn}
+\begin{comment*}
+    Việc hiểu thông tin được chứa trong một $A$ đôi khi cần xem sự tương tác của $A$ với các đối tượng $B$ khác dưới tác động của các công cụ ta gọi là các ánh xạ $f: A \to B$, đồng nghĩa với việc phân biệt các phần tử của $A$ bằng cách gán nhãn chúng bởi các nhãn thuộc $B$, rõ hơn nếu $f(x) \neq f(y)$ thì $x \neq y$, vì nếu $x=y$ theo định nghĩa ánh xạ thì $f(x) = f(y)$. Quay trở lại biểu đồ giao hoán trên, nếu $g$ phân tích được qua $f$, tức $g = \tau \circ f$, khi đó với 
+    \[g(x) \neq g(y) \Leftrightarrow \tau(f(x)) \neq \tau(f(y)) \Rightarrow f(x) \neq f(y).\]
+    Ngược lại nếu $f(x) \neq f(y)$ thì không đảm bảo $g(x) \neq g(y)$ (ví dụ khi $\tau$ là một toàn ánh, có thể xảy ra trường hợp nếu $a\neq b$ nhưng $\tau(a) = \tau(b)$). Điều này chứng tỏ khả năng phân biệt các phần tử của $A$ trong $g$ cũng được chứa trong $f$, nhưng ngược lại thì không. Chứng tỏ thông tin về $A$ của $g$ được chứa trong thông tin về $A$ của $f$. Nói riêng, nếu $\tau$ là đơn ánh thì 
+    \[g(x) \neq g(y) \Leftrightarrow \tau(f(x)) \neq \tau(f(y)) \Leftrightarrow f(x) \neq f(y).\]
+    Chứng tỏ lượng thông tin về $A$ chứa trong $f$ và $g$ được coi là như nhau.
+\end{comment*}
+\begin{defn}[Tính phổ dụng]
+    Cho $\Scal$ là một họ các tập và họ các ánh xạ từ $A$ vào các phần tử của $\Scal$ là 
+        \[\ff = \{g: A \to X~|~X \in \Scal\}.\]
+    Khi đó nếu tồn tại $f: A \to S \in \Scal$ sao cho biểu đồ sau giao hoán với mọi $g \in \ff$ thì $f$ được gọi là có \textit{tính phổ dụng} trong $\ff$, nghĩa là với mọi $g \in \ff$, tồn tại $\tau: S \to X$
+    \input{images/ComDiagram}
+\end{defn}
+
+
+
+
